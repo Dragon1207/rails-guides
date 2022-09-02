@@ -1,0 +1,6 @@
+<h1><%= @dog.name %></h1>
+<h4>"<%= @dog.motto %>"</h4>
+<div style="display: flex">
+    <%= button_to 'Remove', dog_path(@dog), method: 'delete', data: { confirm: 'Are you sure?' } %>&nbsp
+    <%= button_to 'Return', dogs_path(@dogs), method: 'get'%>
+</div>
