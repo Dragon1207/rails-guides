@@ -71,6 +71,4 @@ group :test do
   gem "webdrivers"
 end
 
-gem "motor-admin", "~> 0.3.10"
-
 gem "tailwindcss-rails", "~> 2.0"
