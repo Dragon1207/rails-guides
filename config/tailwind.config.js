@@ -6,7 +6,11 @@ module.exports = {
     './app/views/**/*',
   ],
   theme: {
+    fontFamily: {
+      'sans': ['Berlin Sans FB Demi'],
+      'poppins': ['Poppins'],
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [],  
 }
