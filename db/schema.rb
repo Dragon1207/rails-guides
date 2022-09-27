@@ -10,16 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
-  create_table "dogs", force: :cascade do |t|
-    t.string "name"
-    t.string "motto"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_234358) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "motor_alert_locks", force: :cascade do |t|
-    t.integer "alert_id", null: false
+    t.bigint "alert_id", null: false
     t.string "lock_timestamp", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
   end
 
   create_table "motor_alerts", force: :cascade do |t|
-    t.integer "query_id", null: false
+    t.bigint "query_id", null: false
     t.string "name", null: false
     t.text "description"
     t.text "to_emails", null: false
@@ -39,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "motor_alerts_name_unique_index", unique: true, where: "deleted_at IS NULL"
+    t.index ["name"], name: "motor_alerts_name_unique_index", unique: true, where: "(deleted_at IS NULL)"
     t.index ["query_id"], name: "index_motor_alerts_on_query_id"
     t.index ["updated_at"], name: "index_motor_alerts_on_updated_at"
   end
@@ -53,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "motor_api_configs_name_unique_index", unique: true, where: "deleted_at IS NULL"
+    t.index ["name"], name: "motor_api_configs_name_unique_index", unique: true, where: "(deleted_at IS NULL)"
   end
 
   create_table "motor_audits", force: :cascade do |t|
@@ -96,7 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["title"], name: "motor_dashboards_title_unique_index", unique: true, where: "deleted_at IS NULL"
+    t.index ["title"], name: "motor_dashboards_title_unique_index", unique: true, where: "(deleted_at IS NULL)"
     t.index ["updated_at"], name: "index_motor_dashboards_on_updated_at"
   end
 
@@ -112,7 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
     t.string "api_config_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "motor_forms_name_unique_index", unique: true, where: "deleted_at IS NULL"
+    t.index ["name"], name: "motor_forms_name_unique_index", unique: true, where: "(deleted_at IS NULL)"
     t.index ["updated_at"], name: "index_motor_forms_on_updated_at"
   end
 
@@ -126,7 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "motor_queries_name_unique_index", unique: true, where: "deleted_at IS NULL"
+    t.index ["name"], name: "motor_queries_name_unique_index", unique: true, where: "(deleted_at IS NULL)"
     t.index ["updated_at"], name: "index_motor_queries_on_updated_at"
   end
 
@@ -140,7 +136,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
   end
 
   create_table "motor_taggable_tags", force: :cascade do |t|
-    t.integer "tag_id", null: false
+    t.bigint "tag_id", null: false
     t.bigint "taggable_id", null: false
     t.string "taggable_type", null: false
     t.index ["tag_id"], name: "index_motor_taggable_tags_on_tag_id"
@@ -152,13 +148,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_041329) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "motor_tags_name_unique_index", unique: true
-  end
-
-  create_table "todo_lists", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
