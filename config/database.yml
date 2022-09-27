@@ -5,15 +5,15 @@ default: &default
 
 development:
   <<: *default
-  username: <%= Rails.application.credentials.database[:username] %>
-  password: <%= Rails.application.credentials.database[:password] %>
+  username: <%= Rails.application.secrets[:database][:username] %>
+  password: <%= Rails.application.secrets[:database][:password] %>
   host: localhost
   database: app_development
 
 test:
   <<: *default
-  username: <%= Rails.application.credentials.database[:username] %>
-  password: <%= Rails.application.credentials.database[:password] %>
+  username: <%= Rails.application.secrets[:database][:username] %>
+  password: <%= Rails.application.secrets[:database][:password] %>
   host: localhost
   database: app_test
 
