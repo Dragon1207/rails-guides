@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Typeword.create([
+    { title: "Excel" },
+    { title: "Notion" },
+    { title: "Airtable" }
+])
+User.create(
+    email: 'admin@admin.com',
+    admin: 'admin',
+    password: 'adminadmin',
+    confirmed_at: Time.now.utc,
+    created_at: Time.now.utc
+)

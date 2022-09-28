@@ -1,0 +1,2 @@
+module TypewordHelper
+end
