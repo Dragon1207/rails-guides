@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Berlin Sans FB Demi';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Berlin Sans FB Demi'), url('BRLNSDB.woff') format('woff');
+}
