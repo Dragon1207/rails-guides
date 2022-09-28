@@ -13,4 +13,4 @@
  *= require_tree .
  *= require_self
  */
- @import 'berlin-sans-fb-demi';
+ @import '../stylesheets/berlin-sans-fb-demi.css';
