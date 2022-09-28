@@ -13,6 +13,12 @@
 
   <body>
     <main class="mx-[180px] mt-[15px] px-[15px] z-0">
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </main>
     <div id='footer' class='h-[530px] w-[100%] bg-[#F7F7F7] -mt-[120px] z-0 px-[195px] font-poppins text-[#5C6366]'>

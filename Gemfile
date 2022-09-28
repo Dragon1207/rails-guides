@@ -72,3 +72,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+gem 'rails_admin', '~> 3.0'
+gem "sassc-rails"
+gem "devise", github: "heartcombo/devise", ref: "f8d1ea90bc3"
+gem "letter_opener", group: :development
