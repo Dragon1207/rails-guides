@@ -18,4 +18,8 @@ test:
   database: app_test
 
 production:
-  url: postgres://gqushbvpnxkwjm:f900f0d2710e1085976b4a3584bfd08c51fd140b0a5d19a1cf114e7fd832dd38@ec2-3-219-19-205.compute-1.amazonaws.com:5432/d31mcqeg4eo5he
+  username: lhvugkikdjrdii
+  password: 1ee3948fec709cd219ace0e68ecb24cdac4087639ecb1a210a76e1b05774316a
+  host: ec2-18-209-78-11.compute-1.amazonaws.com
+  database: d3lnea68snnfj1
+  url: postgres://lhvugkikdjrdii:1ee3948fec709cd219ace0e68ecb24cdac4087639ecb1a210a76e1b05774316a@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d3lnea68snnfj1
