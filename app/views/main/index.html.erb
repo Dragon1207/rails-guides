@@ -76,7 +76,12 @@
       </form>
     </div>
   </div>
-  <div id='itemsList' onclick='guideBtnClick()' class='relative justify-between items-center flex font-poppins overflow-x-scroll no-scrollbar mt-[30px] pb-[45px]'>
+  <div id='itemsList' class='relative justify-between items-center flex font-poppins overflow-x-scroll no-scrollbar mt-[30px] pb-[45px]'>
+    <button id='topBtn' onclick='topFunction()' class='hidden sticky left-0 rounded-full ml-auto w-[40px] h-[40px] p-[6px] bg-white shadow-[0_12px_15px_0px_rgba(0,0,0,0.08)] active:border-[#1C7FFC] border-2'>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
     <button id='all' class='focus:outline-none hover:bg-red-800 focus:ring-4 focus:ring-red-300 text-sm dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 h-[50px] px-8 m-1 text-[16px] rounded-full bg-[#FF1A1A] text-center flex justify-center items-center shadow-[0_15px_25px_0px_rgba(203,0,0,0.2)]'>All</button>
     <button id='engineering' class='px-8 text-[14px] hover:focus:outline-none hover:focus:ring-4 hover:focus:ring-red-300 hover:text-sm h-[50px] hover:rounded-full hover:bg-[#FF1A1A] hover:text-center flex justify-center items-center hover:shadow-[0_15px_25px_0px_rgba(203,0,0,0.2)]'>Engineering</button>
     <button id='business' class='px-8 text-[14px] hover:focus:outline-none hover:focus:ring-4 hover:focus:ring-red-300 hover:text-sm h-[50px] hover:rounded-full hover:bg-[#FF1A1A] hover:text-center flex justify-center items-center hover:shadow-[0_15px_25px_0px_rgba(203,0,0,0.2)]'>Business</button>
@@ -91,7 +96,7 @@
     <button id='management' class='px-8 text-[14px] hover:focus:outline-none hover:focus:ring-4 hover:focus:ring-red-300 hover:text-sm h-[50px] hover:rounded-full hover:bg-[#FF1A1A] hover:text-center flex justify-center items-center hover:shadow-[0_15px_25px_0px_rgba(203,0,0,0.2)]'>Management</button>
     <button id='softwareTools' class='px-8 text-[14px] hover:focus:outline-none hover:focus:ring-4 hover:focus:ring-red-300 hover:text-sm h-[50px] hover:rounded-full hover:bg-[#FF1A1A] hover:text-center flex justify-center items-center hover:shadow-[0_15px_25px_0px_rgba(203,0,0,0.2)] text-clip whitespace-nowrap'>Software Tools</button>
 
-    <button id='myBtn' onclick='topFunction()' class='sticky right-0 rounded-full ml-auto w-[40px] h-[40px] p-[6px] bg-white shadow-[0_12px_15px_0px_rgba(0,0,0,0.08)] active:border-[#1C7FFC] border-2'>
+    <button id='bottomBtn' onclick='bottomFunction()' class='sticky right-0 rounded-full ml-auto w-[40px] h-[40px] p-[6px] bg-white shadow-[0_12px_15px_0px_rgba(0,0,0,0.08)] active:border-[#1C7FFC] border-2'>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
@@ -308,7 +313,20 @@
   css.type = "text/css";
   css.innerHTML = ".typewrite > .wrap { border-right: 2px solid #000000; animation: caret 0.5s steps(1) infinite;}";
   document.body.appendChild(css);
-  function topFunction() {
+  function bottomFunction() {
     document.getElementById('itemsList').scrollLeft+=document.getElementById('itemsList').offsetWidth;
+    console.log(document.getElementById('itemsList').scrollLeft, "---", document.getElementById('itemsList').scrollWidth-document.getElementById('itemsList').offsetWidth);
+    if (document.getElementById('itemsList').scrollLeft >= document.getElementById('itemsList').scrollWidth - document.getElementById('itemsList').offsetWidth - 5){
+      document.getElementById('bottomBtn').classList.add("hidden");
+    }
+    document.getElementById('topBtn').classList.remove("hidden");
+  }
+  function topFunction() {
+    document.getElementById('itemsList').scrollLeft-=document.getElementById('itemsList').offsetWidth;
+    console.log(document.getElementById('itemsList').scrollLeft, "---", document.getElementById('itemsList').scrollWidth);
+    if (document.getElementById('itemsList').scrollLeft < 5){
+      document.getElementById('topBtn').classList.add("hidden");
+    }
+    document.getElementById('bottomBtn').classList.remove("hidden");
   }
 </script>
