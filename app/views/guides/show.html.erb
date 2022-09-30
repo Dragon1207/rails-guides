@@ -4,195 +4,61 @@
         <div class="text-[16px] text-[#91989b]">></div>
         <div class="text-[16px] text-[#91989b]">Guide</div>
         <div class="text-[16px] text-[#91989b]">></div>
-        <div class="text-[16px] text-[#FF1A1A]">Programming</div>
+        <div id='sectionText' class="text-[16px] text-[#FF1A1A]"><%= @guides.first.section %></div>
     </div>
     <div class="mt-[50px] flex justify-start items-start">
         <div class="flex flex-col justify-start items-center space-y-[50px]">
-            <div class="flex w-[240px] h-[60px] bg-[#FF1A1A] rounded-[10px] text-[16px] justify-center items-center text-center text-white">Programming guides</div>
-            <div class="text-[16px] text-[#4d4d4d]">Suspendisse bibendum</div>
-            <div class="text-[16px] text-[#4d4d4d]">Quisque fermentum</div>
-            <div class="text-[16px] text-[#4d4d4d]">Nulla blandit ipsum</div>
-            <div class="text-[16px] text-[#4d4d4d]">Where the program use</div>
-            <div class="text-[16px] text-[#4d4d4d]">Lorem ipsum cursus</div>
-            <div class="text-[16px] text-[#4d4d4d]">Aliquam faucibus quam</div>
-            <div class="text-[16px] text-[#4d4d4d]">Fusce condimentum</div>
-            <div class="text-[16px] text-[#4d4d4d]">Sed turpis interdum</div>
-        </div>
-        <div class="ml-[70px] flex flex-col">
-            <div>
-            <div class='font-poppins'>
-                <% @guides.first(10).each do |guide| %>
-                    <%= guide.content %>
+            <% @guides.each_with_index do |guide, index| %>
+                <% if index == 0 %>
+                <a id='secBtn<%= index %>' href='#<%= index %>' type='button' onclick='sectionClicked(<%= index %>)' class="focus:outline-none hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 flex w-[240px] h-[60px] bg-[#FF1A1A] rounded-[10px] text-[16px] justify-center items-center text-center text-white"><%= guide.section %></a>
+                <% else %>
+                <a id='secBtn<%= index %>' href='#<%= index %>' type='button' onclick='sectionClicked(<%= index %>)' class="text-[16px] text-[#4d4d4d]"><%= guide.section %></a>
                 <% end %>
-            </div>
-                <div class="text-[44px] -mt-[15px] font-bold font-sans text-[#010101]">
-                    Programming Guides To Improve Skills
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        A learning system based on formalised teaching but with the help of electronic resources. Lorem ipsum dolor sitamet, consectetur adipisc lorem ipsium. Nullam mollis condimentum faucibu lectus varius, eu ultricies elit tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. <span class='font-bold text-black'>Duis placerat, mauris id ornare sodales,</span> sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper.
-                        Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. Praesent rutrum aliquet leo vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. <span class='font-bold text-black'>Praesent rutrum aliquet leo</span> vitae luctus. Sed turpis turpis, accumsan.
-                        quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada. 
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-                
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Suspendisse bibendum sematis
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. Praesent rutrum aliquet leo vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing.
-                        <br><br>
-                        <span class='font-bold text-black'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitorsem turpis interdum osuere tincidunt efficitur semp aesent rutrum aliquet leo vitae luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitorsem turpis interdum osuere tincidunt. Tincidunt efficitur semp aesent rutrum aliquet leo vitae luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. 
-                        Cras non ex ipsum. Donec sed mi ac dolor sodales porttitorsem turpis interdum osuere tincidunt. 
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-                
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Quisque fermentum utturpis finibus lorem
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        <div>
-                            Aliquam eget euismod lorem, sed molestie enim. Nulla vel lectus faucibus, sodales ipsum et, aliquam tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse quam lacus, consequat et elit nec, eleifend rhoncus nunc. Etiam eget nisi venenatis, mollis neque nec, posuere ipsum. <span class='font-bold text-black'>Suspendisse nulla felis, euismod</span> vel nibh eget, venenatis porttitor ante. Curabitur dignissim euismod vehicula. Aenean magna enim, euismod vitae nisl semper, bibendum efficitur nunc. In dictum nec nulla nec scelerisque.
-                            Aliquam vel pharetra diam, ac euismod velit. Proin convallis mollis ligula. 
-                        </div>
-                        <div class='py-[10px]'>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[4px] bg-[#FF1A1A] w-[8px] h-[8px]'></div>
-                                <div>Vivamus suscipit interdum libero, inlobortis libero ornarenec. Praesent utenimorci.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[4px] bg-[#FF1A1A] w-[8px] h-[8px]'></div>
-                                <div>Aliquam eget euismod lorem, sedestie faucibus, sodales ipsumet aliquam tortor.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[4px] bg-[#FF1A1A] w-[8px] h-[8px]'></div>
-                                <div>Morbi ullamcorper dui lectus, scelerisque dapibus justo varius eu.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[4px] bg-[#FF1A1A] w-[8px] h-[8px]'></div>
-                                <div>Pellentesque erosorci, congue fermentum porttitor congue, pharetra utvelit.</div>
-                            </div>
-                        </div>
-                        <div>
-                            <span class='font-bold text-black'>Etiam vitae diam lobortis, tincidunt augue</span> sit amet, tincidunt mi. Etiam a tincidunt metus, at interd odio. Pellentesque vestibulum sapien vel tellus rutrum pulvinar. Phasellus volutpat metus ipsum, quis efficitur orci ultrices in. Morbi nisi enim, imperdiet faucibus tortor eget, vehicula pellentesque ligula. Fusce a tellus tortor. Sed diam erat, interdum et lorem vel, vulputate vestibulum sapien. Vivamus eu orci sed diam auctor dignissim lorem ipsum dummy text.
-                        </div>
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Nulla blandit ipsum convallis
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        <div>
-                            Quisque ut auctor lacus, ac tincidunt est. Curabitur leo augue, porttitor non vehicula ac, convallis non tortor. Vestibulum in nisi id lacus pharetra cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Proin malesuada vel dolor vitae molestie. Suspendisse potenti. Donec sed ante sollicitudin, dictum sem ac, consequat enim. Fusce nulla turpis, vestibulum quis condimentum iaculis, efficitur at lacus.
-                            <br><br>
-                            <span class='font-bold text-black'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. Praesent rutrum aliquet leo vitae luctus.
-                        </div>
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Where can you see the programming in use?
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        <div>
-                            Aliquam eget euismod lorem, sed molestie enim. Nulla vel lectus faucibus, sodales ipsum et, aliqm tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspe ndisse quam lacus onsequat et elit nec, eleifend rhoncus nunc. Etiam eget nisi venenatis, mollis neque nec, posuere ipsum euismod vel nibh eget, venenatis porttitor ante. 
-                        </div>
-                        <div class='py-[10px]'>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[13px] bg-[#FCECED] w-[25px] h-[25px] text-[#FF1A1A] font-normal font-poppins leading-[26px] text-[12px] pl-[6px]'>01</div>
-                                <div>Suscipit interdum libero, inlobortis libero ornarenec. Morbi utibero necenim egestas placerat.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[13px] bg-[#FCECED] w-[25px] h-[25px] text-[#FF1A1A] font-normal font-poppins leading-[26px] text-[12px] pl-[6px]'>02</div>
-                                <div>Aliquam eget euismod lorem, sedestie enim. Nulla vel lectus faucibus, aliquam tortor.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[13px] bg-[#FCECED] w-[25px] h-[25px] text-[#FF1A1A] font-normal font-poppins leading-[26px] text-[12px] pl-[6px]'>03</div>
-                                <div>Ullamcorper scelerisque dapibus justo varius donec lobortis blandit sagittis placerat quis.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[13px] bg-[#FCECED] w-[25px] h-[25px] text-[#FF1A1A] font-normal font-poppins leading-[26px] text-[12px] pl-[6px]'>04</div>
-                                <div>Congue fermentum porttitor congue, pharetra utvelit. Cras vitae diam fringilla, odales.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div class='mr-[20px] rounded-[13px] bg-[#FCECED] w-[25px] h-[25px] text-[#FF1A1A] font-normal font-poppins leading-[26px] text-[12px] pl-[6px]'>05</div>
-                                <div>Felisfusce lobortis odioeget facilisis. Vestibulum quisfelis ullamcorper blandit orci.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-
-                <div class='mt-[40px]'>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                            Lorem ipsum cursus sematis
-                        </div>
-                        <div class='py-[10px]'>
-                            <div class='my-[20px] flex items-center'>
-                                <div><span class='text-[#FF1A1A]'>1. </span><span class='text-black font-bold'>Quisque ut auctor lacus, ac tincidunt est.</span> Curabitur leo augue, porttitor non vehicula ac, conval non tortor. Vestibulum in nisi id lacus pharetra cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Proin malesuada vel dolor vitae molestie. Donec sed ante sollicitudin, dictum sem ac, consequat enim. Fusce nulla turpis, vestibulum quis condimentum iaculis, efficitur at lacus.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div><span class='text-[#FF1A1A]'>2. </span><span class='text-black font-bold'>Donec sed ante sollicitudin, dictum sem</span> Curabitur leo augue, porttitor non vehicula ac, convllis non tortor. Vestibulum in nisi id lacus pharetra cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Proin malesuada vel dolor vitae molestie. Suspendisse potenti. Donec sed ante sollicitudin, dictum sem ac, consequat enim. Fusce nulla turpis, vestibulum iaculis, efficitur at lacus.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div><span class='text-[#FF1A1A]'>3. </span><span class='text-black font-bold'>Suspendisse potenti onec sed ante</span> Curabitur leo augue, porttitor non vehicula ac, conval non tortor. Vestibulum in nisi id lacus pharetra cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Proin malesuada vel dolor vitae molestie. Donec sed ante sollicitudin, dictum sem ac, consequat enim. Fusce nulla turpis, vestibulum quis condimentum iaculis, efficitur at lacus.</div>
-                            </div>
-                            <div class='my-[20px] flex items-center'>
-                                <div><span class='text-[#FF1A1A]'>4. </span><span class='text-black font-bold'>Vestibulum in nisi id lacus Curabitur leo</span> augue, porttitor non vehicula ac, convallis non tortor. Vestibulum in nisi id lacus pharetra cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Proin malesuada vel dolor vitae molestie. Suspendisse potenti. Donec sed ante sem ac, consequat enim. Fusce nulla turpis, vestibulum quis condimentum iaculis, efficitur at lacus.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Aliquam faucibus quam dictum vehicula
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        A learning system based on formalised teaching but with the help of electronic resources. Lorem ipsum dolor sitamet, consectetur adipisc lorem ipsium. Nullam mollis condimentum faucibu lectus varius, eu ultricies elit tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. <span class='font-bold text-black'>Cras non ex ipsum.</span> Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. Praesent rutrum aliquet leo vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor.
-                        <br><br>
-                        Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. Praesent rutrum aliquet leo vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada.
-                        <br><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. <span class='font-bold text-black'>Praesent rutrum aliquet leo</span> vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitorare sodales, sem turpis interdum massa. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante.
-                        magna vel elit. Etiam tincidunt efficitur semper.
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Fusce condimentum rutrum
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        Aliquam eget euismod lorem, sed molestie enim. Nulla vel lectus faucibus, sodales ipsum et, aliam tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse quam lacus, consequat et elit nec, eleifend rhoncus nunc. Etiam eget nisi venenatis, mollis neque nec, posuere ipsum. <span class='font-bold text-black'>Suspendisse nulla felis, euismod</span> vel nibh eget, venenatis porttitor ante. Curabitur dignissim euismod vehicula. Aenean magna enim, euismod vitae nisl semper, bibendum efficitur nunc. In dictum nec nulla nec scelerisque. Aliquam vel pharetra diam, ac euismod velit. Proin convallis mollis ligula.
-                        <br><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. <span class='font-bold text-black'>Praesent rutrum aliquet leo</span> vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. Aliquam finibus finibus odio ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitorare sodales, sem turpis interdum massa. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere.
-                    </div>
-                    <div class='mt-[35px] h-[1px] w-[100%] bg-[#5C6366]'></div>
-                </div>
-
-                <div class='mt-[40px]'>
-                    <div class="text-[28px] font-semibold font-sans text-[#010101]">
-                        Sed turpis interdum
-                    </div>
-                    <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
-                        Aliquam eget euismod lorem, sed molestie enim. Nulla vel lectus faucibus, sodales ipsum et, aliam tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse quam lacus, consequat et elit nec, eleifend rhoncus nunc. Etiam eget nisi venenatis, mollis neque nec, posuere ipsum. Suspendisse nulla felis, euismod vel nibh eget, venenatis porttitor ante. <span class='font-bold text-black'>Curabitur dignissim euismod</span> vehicula. Aenean magna enim, euismod vitae nisl semper, bibendum efficitur nunc. In dictum nec nulla nec scelerisque. Aliquam vel pharetra diam, ac euismod velit. Proin convallis mollis ligula.
-                        <br><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitor. Duis placerat, mauris id ornare sodales, sem turpis interdum massa, ac posuere ante magna vel elit. Etiam tincidunt efficitur semper. Praesent rutrum aliquet leo vitae luctus. Sed turpis turpis, accumsan quis sem id, consectetur pharetra leo. <span class='font-bold text-black'>Aliquam finibus finibus odio</span> ac tristique. Lorem ipsum dolor sit amet, consectetur adipiscing nibh vel augue cursus malesuada. Cras non ex ipsum. Donec sed mi ac dolor sodales porttitorare sodales, sem turpis interdum massa. Maecenas dignissim nibh vel augue cursus malesuada. Cras non miacdolor sodales porttitor. 
-                    </div>
-                </div>
-
+            <% end %>
+        </div>
+        <div class="ml-[70px] flex flex-col -mt-[50px]">
+            <div class='font-poppins'>
+                <% @guides.each_with_index do |guide, index| %>
+                    <% if index == 0 %>
+                    <div id='<%= index %>' class='text-[44px] mt-[35px] font-bold font-sans text-[#010101]'><%= guide.title %></div>
+                    <% else %>
+                    <div id='<%= index %>' class='text-[28px] mt-[35px] font-bold font-sans text-[#010101]'><%= guide.title %></div>
+                    <% end %>
+                    <div class="mt-[20px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]"><%= guide.content %></div>
+                    <% if index+1 != @guides.length() %>
+                    <div class='mt-[25px] h-[1px] w-[100%] bg-[#5C6366]'></div>
+                    <% end %>
+                <% end %>
             </div>
         </div>
     </div>
 </div>
+<script>
+var originId = 0;
+function sectionClicked(id) {
+    document.getElementById('sectionText').innerHTML = document.getElementById('secBtn'+id).innerHTML;
+    
+    document.getElementById(originId).classList.remove('text-[44px]');
+    document.getElementById(originId).classList.add('text-[28px]');
+    document.getElementById(id).classList.remove('text-[28px]');
+    document.getElementById(id).classList.add('text-[44px]');
+
+    document.getElementById('secBtn'+originId).classList.remove(
+        'focus:outline-none', 'hover:bg-red-800', 'focus:ring-4', 'focus:ring-red-300', 'dark:bg-red-600',
+        'dark:hover:bg-red-700', 'dark:focus:ring-red-900', 'flex', 'w-[240px]', 'h-[60px]', 'bg-[#FF1A1A]',
+        'rounded-[10px]', 'text-[16px]', 'justify-center', 'items-center', 'text-center', 'text-white'
+    );
+    document.getElementById('secBtn'+originId).classList.add(
+        'text-[#4d4d4d]'
+    );
+    document.getElementById('secBtn'+id).classList.remove(
+        'text-[#4d4d4d]'
+    );
+    document.getElementById('secBtn'+id).classList.add(
+        'focus:outline-none', 'hover:bg-red-800', 'focus:ring-4', 'focus:ring-red-300', 'dark:bg-red-600',
+        'dark:hover:bg-red-700', 'dark:focus:ring-red-900', 'flex', 'w-[240px]', 'h-[60px]', 'bg-[#FF1A1A]',
+        'rounded-[10px]', 'text-[16px]', 'justify-center', 'items-center', 'text-center', 'text-white'
+    );
+    originId = id;
+}
+</script>

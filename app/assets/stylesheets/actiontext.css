@@ -32,22 +32,29 @@
 
 .trix-content {
   color: #5C6366;
+  }
+
+.trix-content div {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .trix-content strong {
   color: black;
 }
 
-a {
+.trix-content a {
   color: blue;
 }
 
 .trix-content ul li {
-  margin-top: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .trix-content ol li {
-  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .trix-content ul{
