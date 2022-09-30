@@ -20,6 +20,11 @@
         </div>
         <div class="ml-[70px] flex flex-col">
             <div>
+            <div class='font-poppins'>
+                <% @guides.first(10).each do |guide| %>
+                    <%= guide.content %>
+                <% end %>
+            </div>
                 <div class="text-[44px] -mt-[15px] font-bold font-sans text-[#010101]">
                     Programming Guides To Improve Skills
                     <div class="mt-[30px] text-[16px] font-normal font-poppins leading-[26px] text-[#5c6366]">
