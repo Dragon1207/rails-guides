@@ -18,8 +18,8 @@ test:
   database: app_test
 
 production:
-  username: lhvugkikdjrdii
-  password: 1ee3948fec709cd219ace0e68ecb24cdac4087639ecb1a210a76e1b05774316a
-  host: ec2-18-209-78-11.compute-1.amazonaws.com
-  database: d3lnea68snnfj1
-  url: postgres://lhvugkikdjrdii:1ee3948fec709cd219ace0e68ecb24cdac4087639ecb1a210a76e1b05774316a@ec2-18-209-78-11.compute-1.amazonaws.com:5432/d3lnea68snnfj1
+  username: cdowjqurltjjez
+  password: 6fa123303e6ac258acebc4f4d2a6fc272c424b2ceb634c33c6e82632400868d2
+  host: ec2-34-227-120-79.compute-1.amazonaws.com
+  database: dd0p16o668q2ul
+  url: postgres://cdowjqurltjjez:6fa123303e6ac258acebc4f4d2a6fc272c424b2ceb634c33c6e82632400868d2@ec2-34-227-120-79.compute-1.amazonaws.com:5432/dd0p16o668q2ul
