@@ -20,5 +20,5 @@ User.create(
 Guide.create(
     title: 'Programming Guides To Improve Skills',
     section: 'Programming guides',
-    Content: ''
+    content: ''
 )
