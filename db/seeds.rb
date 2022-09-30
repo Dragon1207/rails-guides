@@ -17,3 +17,8 @@ User.create(
     confirmed_at: Time.now.utc,
     created_at: Time.now.utc
 )
+Guide.create(
+    title: 'Programming Guides To Improve Skills',
+    section: 'Programming guides',
+    Content: ''
+)
