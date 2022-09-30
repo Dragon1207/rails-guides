@@ -1,3 +1,14 @@
-span.trix-button-group.trix-button-group--file-tools {
+span.trix-button-group.trix-button-group--file-tools,
+tr.odd.link.active_storage_attachment_links,
+tr.even.link.active_storage_blob_links,
+tr.odd.link.action_text_encrypted_rich_text_links,
+tr.odd.link.action_text_rich_text_links,
+tr.even.link.active_storage_variant_record_links,
+li.dropdown-header,
+li[data-model="active_storage~attachment"],
+li[data-model="active_storage~blob"],
+li[data-model="active_storage~variant_record"],
+li[data-model="action_text~rich_text"],
+li[data-model="action_text~encrypted_rich_text"] {
     display: none;
 }
